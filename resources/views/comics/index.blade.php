@@ -13,6 +13,8 @@
         @foreach ($comics as $comic)
             <li>
                 <h3>{{ $comic->title}}</h3>
+                <p>{{ $comic->description }}</p>
+                <img src="{{ $comic->thumb }}" alt="">
             </li>
         @endforeach
     </ul>
