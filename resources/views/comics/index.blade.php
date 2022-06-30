@@ -1,22 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+    @extends('layouts.app')
+
+    @section('main_content')
+        <div class="container">
+            <h2>Lista Comics</h2>
+            <ul>
+                @foreach ($comics as $comic)
+                    <li>
+                        <h3>
+                            <a href="{{ route('comics.show',['comic' => $comic->id]) }}">
+                                {{ $comic->title}}
+                            </a>
+                        </h3>
+                        <p>{{ $comic->description }}</p>
+                        <img src="{{ $comic->thumb }}" alt="">
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    @endsection
     
-    <h2>Lista Comics</h2>
-    <ul>
-        @foreach ($comics as $comic)
-            <li>
-                <h3>{{ $comic->title}}</h3>
-                <p>{{ $comic->description }}</p>
-                <img src="{{ $comic->thumb }}" alt="">
-            </li>
-        @endforeach
-    </ul>
-</body>
-</html>
