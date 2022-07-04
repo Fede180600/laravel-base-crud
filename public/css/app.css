@@ -12149,3 +12149,22 @@ fieldset:disabled .btn {
   }
 }
 
+.img-container {
+  width: 200px;
+  height: 350px;
+}
+
+.img-container img {
+  width: 100%;
+}
+
+.show-img-container {
+  width: 400px;
+  height: 600px;
+  margin-bottom: 2rem;
+}
+
+.show-img-container img {
+  width: 100%;
+}
+

@@ -5,7 +5,9 @@
         <h1>Dettagli comic:</h1>
         <h2>{{ $selected_comic->title}}</h2>
         <p><small>{{ $selected_comic->type }}</small></p>
-        <img src="{{ $selected_comic->thumb}}" alt="">
+        <div class="show-img-container">
+            <img src="{{ $selected_comic->thumb}}" alt="">
+        </div>
         <p><strong>{{ $selected_comic->description}}</strong></p>
         <p>Price: ${{ $selected_comic->price}}</p>
         <p>{{ $selected_comic->series }}</p>

@@ -12,7 +12,9 @@
                             </a>
                         </h3>
                         <p>{{ $comic->description }}</p>
-                        <img src="{{ $comic->thumb }}" alt="">
+                        <div class="img-container">
+                            <img src="{{ $comic->thumb }}" alt="">
+                        </div>
                     </li>
                 @endforeach
             </ul>
