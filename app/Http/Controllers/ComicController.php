@@ -46,6 +46,18 @@ class ComicController extends Controller
         $new_comic->series = $data['series'];
         $new_comic->type = $data['type'];
         $new_comic->sale_date = $data['sale_date'];
+        
+        //Validazione dei dati
+        $request->validate([
+            'title' => 'required|max:150|min:5',
+            'text' => 'required',
+            'thumb' => 'required',
+            'price' => 'required|max:20',
+            'series' => 'required|max:100',
+            'sale_date' => 'nullable|date',
+            'type' => 'required|max:100'
+        ]);
+
         $new_comic->save();
 
         return redirect()->route('comics.show', ['comic' => $new_comic->id]);
