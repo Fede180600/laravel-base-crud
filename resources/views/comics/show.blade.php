@@ -9,7 +9,12 @@
         <p><strong>{{ $selected_comic->description}}</strong></p>
         <p>Price: ${{ $selected_comic->price}}</p>
         <p>{{ $selected_comic->series }}</p>
-        <a class="btn btn-primary" href="{{ route('comics.edit', ['comic' => $selected_comic->id]) }}">Modifica</a>
+        <form action="{{ route('comics.destroy', ['comic' => $selected_comic->id]) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <a class="btn btn-primary" href="{{ route('comics.edit', ['comic' => $selected_comic->id]) }}">Modifica</a>
+            <button class="btn btn-danger">Elimina</button>
+        </form>
     </div>
     
 @endsection
