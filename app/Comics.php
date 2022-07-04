@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Comics extends Model
 {
@@ -15,4 +16,6 @@ class Comics extends Model
         'sale_date',
         'type'
     ];
+
+    use SoftDeletes;
 }
